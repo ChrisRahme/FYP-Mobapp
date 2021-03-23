@@ -20,4 +20,30 @@
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>
+
+    <style name="messageFrom">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:justificationMode">inter_word</item>
+    </style>
+
+    <style name="messageFromBot" parent="messageFrom">
+        <item name="android:layout_gravity">start</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="messageFromUser" parent="messageFrom">
+        <item name="android:layout_gravity">end</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="messageText" parent="">
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="messageTime" parent="">
+        <item name="android:textSize">12sp</item>
+    </style>
 </resources>

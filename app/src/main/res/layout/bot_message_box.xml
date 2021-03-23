@@ -1,33 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="wrap_content"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@color/colorAccent"
+    android:background="@color/colorPrimary"
     android:layout_margin="4dp">
+
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:textAlignment="viewEnd">
 
-        <TextView
-            android:id="@+id/message_tv_bot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="4dp"
-            android:padding="8dp"
-            android:layout_gravity="start"
-            tools:text="@tools:sample/full_names"
+        <TextView android:id="@+id/message_tv"
+            style="@style/messageFromBot"
+            android:padding="4dp"
             android:textSize="16sp"
-            android:textColor="@android:color/white"/>
+            tools:text="@tools:sample/lorem/random"/>
 
-        <TextView
-            android:id="@+id/time_tv_bot"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end|bottom"
-            tools:text="@tools:sample/date/hhmm"
+        <TextView android:id="@+id/time_tv"
+            style="@style/messageFromBot"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginLeft="4dp"
             android:textSize="12sp"
-            android:layout_margin="4dp"/>
+            tools:text="@tools:sample/date/hhmm"/>
     </LinearLayout>
 </FrameLayout>

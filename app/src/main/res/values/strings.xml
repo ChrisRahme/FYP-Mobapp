@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">fyp-mobapp</string>
+    <string name="bot_name">Rasa Assistant</string>
+    <string name="send">Send</string>
+    <string name="type_a_message">Type a message...</string>
 </resources>

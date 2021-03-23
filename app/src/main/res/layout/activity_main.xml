@@ -10,29 +10,27 @@
     <com.google.android.material.appbar.AppBarLayout android:id="@+id/appbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintTop_toTopOf="parent">
 
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="#060DCF">
+            android:layout_height="?attr/actionBarSize">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginEnd="16dp"
-                app:shapeAppearance="@style/circleView"
-                android:background="@drawable/ic_launcher_background" />
+                app:shapeAppearanceOverlay="@style/circleView"
+                android:background="@drawable/ic_launcher_background"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:text="Rasa Assistant"
-                android:textSize="20dp"
-                android:textColor="#FFFFFF" />
+                android:text="@string/bot_name"
+                android:textSize="24dp"
+                android:textColor="@android:color/white"/>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -40,49 +38,48 @@
         android:id="@+id/message_list"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@+id/input_box"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_margin="16dp"
+        app:layout_constraintBottom_toTopOf="@+id/message_view"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/appbar" />
+        app:layout_constraintTop_toBottomOf="@id/appbar"/>
 
-    <LinearLayout android:id="@+id/input_box"
-        android:layout_width="match_parent"
+    <com.google.android.material.textfield.TextInputLayout android:id="@+id/message_view"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:background="@android:color/transparent"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/send_button">
 
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="340dp"
-            android:layout_height="wrap_content"
-            android:background="@android:color/transparent">
+        <EditText android:id="@+id/message_box"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:hint="@string/type_a_message"
+            android:autofillHints=""
+            android:inputType="text"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-            <EditText android:id="@+id/message_box"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@android:color/transparent"
-                android:hint="Type a message..."/>
-        </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/send_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/white"
+        android:src="@android:drawable/ic_menu_send"
+        app:fabSize="normal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/message_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:tint="@color/white"
+        android:scaleType="center"
+        app:maxImageSize="50dp"
+        app:borderWidth="0dp"
+        app:rippleColor="@color/white"
+        app:elevation="0dp"
+        android:contentDescription="@string/send"/>
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/send_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:backgroundTint="@color/white"
-            android:elevation="0dp"
-            android:outlineAmbientShadowColor="@color/white"
-            android:src="@android:drawable/ic_menu_send"
-            android:tint="@color/white"
-            android:scaleType="center"
-            app:maxImageSize="40dp"
-            app:backgroundTint="#FFFFFF"
-            app:borderWidth="0dp"
-            app:fabSize="auto"
-            app:rippleColor="@color/white"
-            app:elevation="0dp" />
-    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
