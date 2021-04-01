@@ -20,7 +20,7 @@ class MainActivity : AppCompatActivity() {
     private val USER = 0
     private val BOT = 1
 
-    private val ip   =  "4ca0d45755e6.ngrok.io" //"localhost:5005"
+    private val ip   = "2c431b2b5fb2.ngrok.io" //"localhost:5005"
     private val url  = "https://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
