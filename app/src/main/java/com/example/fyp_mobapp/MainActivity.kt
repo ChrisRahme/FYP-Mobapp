@@ -64,9 +64,11 @@ class MainActivity : AppCompatActivity() {
         response.enqueue(object: Callback<ArrayList<BotResponse>> {
             override fun onResponse(call: Call<ArrayList<BotResponse>>, response: Response<ArrayList<BotResponse>>) {
                 if (response.body() != null && response.body()!!.size != 0) {
-                    val message = response.body()!![0].text
-                    messageList.add(Message(BOT, message))
-                    adapter.notifyDataSetChanged()
+                    for (i in 0 until response.body()!!.size) {
+                        val message = response.body()!![i].text
+                        messageList.add(Message(BOT, message))
+                        adapter.notifyDataSetChanged()
+                    }
                 }
             }
 
