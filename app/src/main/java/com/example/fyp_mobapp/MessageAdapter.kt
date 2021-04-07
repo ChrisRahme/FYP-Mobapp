@@ -25,7 +25,7 @@ class MessageAdapter(var context: Context, var messageList: ArrayList<Message>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         var view: View
 
-        if (viewType == BOT_TXT_LAYOUT) {
+        if (viewType == BOT_TXT_LAYOUT || viewType == BOT_IMG_LAYOUT) {
             view = LayoutInflater.from(context).inflate(R.layout.bot_message_box, parent, false)
         } else {
             view = LayoutInflater.from(context).inflate(R.layout.user_message_box, parent, false)

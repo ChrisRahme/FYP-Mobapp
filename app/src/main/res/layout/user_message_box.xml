@@ -6,24 +6,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/user_rounded_corners"
     android:layout_margin="4dp">
-    <!--android:background="@color/colorAccent"-->
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:weightSum="1"
         android:textAlignment="viewEnd">
 
         <TextView android:id="@+id/message_tv"
             style="@style/messageFromUser"
             android:padding="4dp"
             android:textSize="16sp"
-            tools:text="@tools:sample/lorem/random"/>
+            tools:text="@string/type_a_message"/>
 
         <ImageView android:id="@+id/image_tv"
-            style="@style/messageFromBot"
+            style="@style/messageFromUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:contentDescription="Image"
             android:translationY="-15dp"/>
 
