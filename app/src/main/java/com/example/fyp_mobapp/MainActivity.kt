@@ -19,11 +19,13 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainActivity: ActivityMainBinding
     private lateinit var messageList:ArrayList<Message>
     private lateinit var adapter: MessageAdapter
-    private val USER = "MobileApp" //"M-" + UUID.randomUUID().toString()
-    private val BOT = "0"
 
     private val ip   = "194.126.17.114" //"194.126.17.114" //"xxx.ngrok.io" //"localhost:5005"
     private val url  = "http://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
+
+    private val USER = "MobileApp2" //"M-" + UUID.randomUUID().toString()
+    private val BOT_TXT = "0"
+    private val BOT_IMG = "1"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -65,8 +67,13 @@ class MainActivity : AppCompatActivity() {
             override fun onResponse(call: Call<ArrayList<BotResponse>>, response: Response<ArrayList<BotResponse>>) {
                 if (response.body() != null && response.body()!!.size != 0) {
                     for (i in 0 until response.body()!!.size) {
-                        val message = response.body()!![i].text
-                        messageList.add(Message(BOT, message))
+                        val message = response.body()!![i]
+                        if (message.text.isNotEmpty()) {
+                            messageList.add(Message(BOT_TXT, message.text))
+                        } else if (message.image.isNotEmpty()) {
+                            messageList.add(Message(BOT_IMG, message.image))
+                        }
+
                         adapter.notifyDataSetChanged()
                     }
                 }
@@ -74,7 +81,7 @@ class MainActivity : AppCompatActivity() {
 
             override fun onFailure(call: Call<ArrayList<BotResponse>>, t: Throwable) {
                 val message = "Sorry, something went wrong:\n" + t.message
-                messageList.add(Message(BOT, message))
+                messageList.add(Message(BOT_TXT, message))
                 adapter.notifyDataSetChanged()
             }
         })
