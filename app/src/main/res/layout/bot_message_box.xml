@@ -24,9 +24,8 @@
             style="@style/messageFromBot"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:contentDescription="Image"
-            android:translationY="-15dp"/>
+            android:contentDescription="Image from bot"
+            android:layout_marginTop="-25dp"/>
 
         <TextView android:id="@+id/time_tv"
             style="@style/messageFromBot"
