@@ -56,7 +56,7 @@ class MainActivity : AppCompatActivity() {
         if (message.isEmpty()) {
             Toast.makeText(this, "Please enter a message.", Toast.LENGTH_SHORT).show()
         } else {
-            userMessage = Message(message, USER)
+            userMessage = Message(USER, message)
             messageList.add(userMessage)
             adapter.notifyDataSetChanged()
         }
@@ -69,15 +69,15 @@ class MainActivity : AppCompatActivity() {
         response.enqueue(object: Callback<ArrayList<BotResponse>> {
             override fun onResponse(call: Call<ArrayList<BotResponse>>, response: Response<ArrayList<BotResponse>>) {
                 if (response.body() != null && response.body()!!.size != 0) {
-                    val message = response.body()!![0]
-                    messageList.add(Message(message.text, BOT))
+                    val message = response.body()!![0].text
+                    messageList.add(Message(BOT, message))
                     adapter.notifyDataSetChanged()
                 }
             }
 
             override fun onFailure(call: Call<ArrayList<BotResponse>>, t: Throwable) {
                 val message = "Sorry, something went wrong:\n" + t.message
-                messageList.add(Message(message, BOT))
+                messageList.add(Message(BOT, message))
                 adapter.notifyDataSetChanged()
             }
         })
