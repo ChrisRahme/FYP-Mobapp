@@ -10,8 +10,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class MessageAdapter(var context: Context, var messageList: ArrayList<Message>): RecyclerView.Adapter<MessageAdapter.MessageViewHolder>() {
-    private var USER_LAYOUT = 0
-    private var BOT_LAYOUT = 1
+    private var USER_LAYOUT = 1
+    private var BOT_LAYOUT = 0
 
     class MessageViewHolder(view: View): RecyclerView.ViewHolder(view) {
         val messageView = view.findViewById<TextView>(R.id.message_tv)
@@ -21,10 +21,10 @@ class MessageAdapter(var context: Context, var messageList: ArrayList<Message>):
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MessageViewHolder {
         var view: View
 
-        if (viewType == USER_LAYOUT) {
-            view = LayoutInflater.from(context).inflate(R.layout.user_message_box, parent, false)
-        } else {
+        if (viewType == BOT_LAYOUT) {
             view = LayoutInflater.from(context).inflate(R.layout.bot_message_box, parent, false)
+        } else {
+            view = LayoutInflater.from(context).inflate(R.layout.user_message_box, parent, false)
         }
 
         return MessageViewHolder(view)
@@ -49,10 +49,10 @@ class MessageAdapter(var context: Context, var messageList: ArrayList<Message>):
 
         val view = messageList[position]
 
-        if (view.sender == USER_LAYOUT) {
-            return USER_LAYOUT
-        } else {
+        if (view.sender == BOT_LAYOUT) {
             return BOT_LAYOUT
+        } else {
+            return USER_LAYOUT
         }
     }
 }

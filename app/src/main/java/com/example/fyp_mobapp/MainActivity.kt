@@ -17,11 +17,11 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainActivity: ActivityMainBinding
     private lateinit var messageList:ArrayList<Message>
     private lateinit var adapter: MessageAdapter
-    private val USER = 0
-    private val BOT = 1
+    private val USER = 1
+    private val BOT = 0
 
-    private val ip   = "2c431b2b5fb2.ngrok.io" //"localhost:5005"
-    private val url  = "https://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
+    private val ip   = "194.126.17.114" //"194.126.17.114" //"xxx.ngrok.io" //"localhost:5005"
+    private val url  = "http://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         mainActivity.messageList.layoutManager = linearLayoutManager
 
         mainActivity.sendButton.setOnClickListener {
-            val msg = mainActivity.messageBox.text.toString()
+            val msg = mainActivity.messageBox.text.toString().trim()
 
             if (msg != "") {
                 sendMessage(msg)
