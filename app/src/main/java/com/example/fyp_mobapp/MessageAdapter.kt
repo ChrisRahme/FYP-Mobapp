@@ -43,7 +43,7 @@ class MessageAdapter(var context: Context, var messageList: ArrayList<Message>):
 
         val view = messageList[position]
 
-        if (view.sender == BOT_LAYOUT) {
+        if (view.sender == BOT_LAYOUT.toString()) {
             return BOT_LAYOUT
         } else {
             return USER_LAYOUT

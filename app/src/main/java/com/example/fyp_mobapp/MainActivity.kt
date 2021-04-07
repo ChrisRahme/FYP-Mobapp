@@ -12,13 +12,15 @@ import retrofit2.Retrofit
 import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
+import kotlin.collections.ArrayList
 
 class MainActivity : AppCompatActivity() {
     private lateinit var mainActivity: ActivityMainBinding
     private lateinit var messageList:ArrayList<Message>
     private lateinit var adapter: MessageAdapter
-    private val USER = 1
-    private val BOT = 0
+    private val USER = "MobileApp" //"M-" + UUID.randomUUID().toString()
+    private val BOT = "0"
 
     private val ip   = "194.126.17.114" //"194.126.17.114" //"xxx.ngrok.io" //"localhost:5005"
     private val url  = "http://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
@@ -42,7 +44,6 @@ class MainActivity : AppCompatActivity() {
 
             if (msg != "") {
                 sendMessage(msg)
-                Toast.makeText(this, "Message sent", Toast.LENGTH_SHORT).show()
                 mainActivity.messageBox.setText("")
             } else {
                 Toast.makeText(this, "Please enter a message.", Toast.LENGTH_SHORT).show()
