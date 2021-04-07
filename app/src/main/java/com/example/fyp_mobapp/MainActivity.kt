@@ -52,15 +52,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun sendMessage(message: String) {
-        var userMessage = Message()
-
-        if (message.isEmpty()) {
-            Toast.makeText(this, "Please enter a message.", Toast.LENGTH_SHORT).show()
-        } else {
-            userMessage = Message(USER, message)
-            messageList.add(userMessage)
-            adapter.notifyDataSetChanged()
-        }
+        var userMessage = Message(USER, message)
+        messageList.add(userMessage)
+        adapter.notifyDataSetChanged()
 
         val okHttpClient = OkHttpClient()
         val retrofit = Retrofit.Builder().baseUrl(url).client(okHttpClient).addConverterFactory(GsonConverterFactory.create()).build()
