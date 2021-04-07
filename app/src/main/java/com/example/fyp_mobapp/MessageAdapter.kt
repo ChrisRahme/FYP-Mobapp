@@ -32,12 +32,6 @@ class MessageAdapter(var context: Context, var messageList: ArrayList<Message>):
 
     override fun onBindViewHolder(holder: MessageViewHolder, position: Int) {
         holder.messageView.text = messageList[position].message
-        /*val currentMessage = messageList[position]
-        if (currentMessage.sender == 0) {
-            holder.messageView.text = currentMessage.message
-        } else {
-            holder.messageView.text = currentMessage.message
-        }*/
     }
 
     override fun getItemCount(): Int {
