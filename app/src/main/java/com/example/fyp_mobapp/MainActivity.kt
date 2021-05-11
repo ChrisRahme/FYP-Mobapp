@@ -140,7 +140,7 @@ class MainActivity : AppCompatActivity() {
 
     inner class ButtonRecyclerView(var context: Context, var buttons: List<BotResponse.Buttons>) :
         RecyclerView.Adapter<ButtonRecyclerView.ButtonViewHolder>() {
-        
+
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonViewHolder {
             return ButtonViewHolder(LayoutInflater.from(context).inflate(R.layout.button_list_item, parent, false))
         }
