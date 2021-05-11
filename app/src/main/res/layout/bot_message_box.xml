@@ -1,39 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bot_rounded_corners"
     android:layout_margin="4dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:weightSum="1"
-        android:textAlignment="viewEnd">
+        android:orientation="vertical">
 
-        <TextView android:id="@+id/message_tv"
-            style="@style/messageFromBot"
-            android:padding="4dp"
-            android:textSize="16sp"
-            tools:text="@string/type_a_message"/>
-
-        <ImageView android:id="@+id/image_tv"
-            style="@style/messageFromBot"
+        <LinearLayout android:id="@+id/message_list_linlay"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:contentDescription="Image from bot"
-            android:layout_marginTop="-25dp"/>
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:textAlignment="viewEnd"
+            android:background="@drawable/bot_rounded_corners">
 
-        <TextView android:id="@+id/time_tv"
-            style="@style/messageFromBot"
-            android:layout_marginTop="4dp"
-            android:layout_marginRight="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_marginLeft="4dp"
-            android:textSize="12sp"
-            tools:text="@tools:sample/date/hhmm"/>
+            <TextView android:id="@+id/message_tv"
+                style="@style/messageFromBot"
+                android:padding="4dp"
+                android:textSize="16sp"
+                tools:text="@string/type_a_message"/>
+
+            <ImageView android:id="@+id/image_tv"
+                style="@style/messageFromBot"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:contentDescription="Image from bot"
+                android:layout_marginTop="-25dp"/>
+
+            <!--<TextView android:id="@+id/time_tv"
+                style="@style/messageFromBot"
+                android:layout_marginTop="4dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginLeft="4dp"
+                android:textSize="12sp"
+                tools:text="@tools:sample/date/hhmm"/>-->
+        </LinearLayout>
+
+        <!--<androidx.recyclerview.widget.RecyclerView android:id="@+id/button_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/message_list_linlay"/>-->
     </LinearLayout>
 </FrameLayout>
