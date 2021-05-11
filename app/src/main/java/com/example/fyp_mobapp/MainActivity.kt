@@ -78,8 +78,8 @@ class MainActivity : AppCompatActivity() {
 
     fun sendMessage(message: String, alternative: String = "") {
         val displayedMessage  = if (alternative.isNullOrEmpty()) message else alternative
-        var userMessage       = Message(USER, message)
-        var userDisplayed     = Message(USER, displayedMessage)
+        var userMessage       = Message(USER, message) // The message that will be sent to Rasa (payload in case of buttons)
+        var userDisplayed     = Message(USER, displayedMessage) // The message that will be displayed on screen (title in case of buttons)
 
         messageList.add(userDisplayed)
         adapter.notifyDataSetChanged()
@@ -140,8 +140,7 @@ class MainActivity : AppCompatActivity() {
 
     inner class ButtonRecyclerView(var context: Context, var buttons: List<BotResponse.Buttons>) :
         RecyclerView.Adapter<ButtonRecyclerView.ButtonViewHolder>() {
-
-
+        
         override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ButtonViewHolder {
             return ButtonViewHolder(LayoutInflater.from(context).inflate(R.layout.button_list_item, parent, false))
         }
