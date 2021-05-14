@@ -30,7 +30,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/bot_name"
-                android:textSize="24dp"
+                android:textSize="24sp"
                 android:textColor="@android:color/white"/>
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -53,26 +53,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/message_list"/>
 
-    <!--<androidx.recyclerview.widget.RecyclerView android:id="@+id/message_list"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/message_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/appbar"/>
-
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/button_list"
-        android:layout_width="match_parent"
-        android:layout_height="75dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/message_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/message_list"/>-->
-
     <com.google.android.material.textfield.TextInputLayout android:id="@+id/message_view"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -87,9 +67,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@android:color/transparent"
+            android:inputType="text"
             android:hint="@string/type_a_message"
-            android:autofillHints=""
-            android:inputType="text"/>
+            android:autofillHints="@string/type_a_message"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton android:id="@+id/send_button"
