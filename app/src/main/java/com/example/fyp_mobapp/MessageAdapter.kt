@@ -55,6 +55,7 @@ class MessageAdapter(var context: Context, var messageList: ArrayList<Message>):
                 holder.button_view.visibility = View.GONE
                 //holder.time_view.visibility = View.GONE
             } catch (e: Exception) { }
+
         } else if (message.sender == BOT_IMG_LAYOUT.toString()) {
             val image = holder.image_view as ImageView
             Glide.with(context).load(message.message).into(image)

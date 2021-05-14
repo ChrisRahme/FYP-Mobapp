@@ -44,7 +44,7 @@ class MainActivity : AppCompatActivity() {
     private val ip   = "194.126.17.114" //"194.126.17.114" //"xxx.ngrok.io" //"localhost:5005"
     private val url  = "http://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
 
-    private val USER = "MobileApp3" //"M-" + UUID.randomUUID().toString()
+    private val USER = "M-" + UUID.randomUUID().toString()
     private val BOT_TXT = "0"
     private val BOT_IMG = "1"
     private val BOT_BUT = "2"
