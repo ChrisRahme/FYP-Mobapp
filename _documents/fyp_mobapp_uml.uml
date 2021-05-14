@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>fyp_mobapp_java</OriginalElement>
+  <nodes>
+    <node x="207.0" y="991.0">fyp_mobapp_java.MainActivity.ButtonRecyclerView.ButtonViewHolder</node>
+    <node x="140.7385135135138" y="173.0">fyp_mobapp_java.MessageAdapter</node>
+    <node x="444.8959459459461" y="528.0">fyp_mobapp_java.MainActivity</node>
+    <node x="202.0" y="671.0">fyp_mobapp_java.MessageAdapter.MessageViewHolder</node>
+    <node x="732.7385135135138" y="240.0">fyp_mobapp_java.BotResponse</node>
+    <node x="514.7385135135138" y="295.5">fyp_mobapp_java.MessageSender</node>
+    <node x="466.0925675675677" y="1134.0">fyp_mobapp_java.MainActivity.ButtonRecyclerView</node>
+    <node x="442.1459459459461" y="0.0">fyp_mobapp_java.Message</node>
+    <node x="899.7918918918922" y="671.5">fyp_mobapp_java.BotResponse.Buttons</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="fyp_mobapp_java.MainActivity.ButtonRecyclerView" target="fyp_mobapp_java.MainActivity" relationship="INNER_CLASS">
+      <point x="15.0" y="-95.0" />
+      <point x="8.696621621621603" y="271.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity" target="fyp_mobapp_java.MessageSender" relationship="DEPENDENCY">
+      <point x="-31.1574324324323" y="-271.0" />
+      <point x="0.0" y="28.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity" target="fyp_mobapp_java.Message" relationship="CREATE">
+      <point x="5.405405386227358E-5" y="-271.0" />
+      <point x="644.396" y="494.0" />
+      <point x="1236.489" y="494.0" />
+      <point x="1236.489" y="61.5" />
+      <point x="171.00005405405386" y="0.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.MessageAdapter" target="fyp_mobapp_java.MessageAdapter.MessageViewHolder" relationship="CREATE">
+      <point x="-19.738513513513794" y="150.5" />
+      <point x="0.0" y="-61.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity.ButtonRecyclerView" target="fyp_mobapp_java.MainActivity.ButtonRecyclerView.ButtonViewHolder" relationship="CREATE">
+      <point x="-172.0" y="0.0" />
+      <point x="298.0" y="1229.0" />
+      <point x="0.0" y="39.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity" target="fyp_mobapp_java.MessageAdapter" relationship="CREATE">
+      <point x="-177.0" y="-271.0" />
+      <point x="149.6574324324323" y="150.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity" target="fyp_mobapp_java.BotResponse" relationship="DEPENDENCY">
+      <point x="95.8425675675677" y="-271.0" />
+      <point x="-203.0" y="83.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity" target="fyp_mobapp_java.MessageAdapter" relationship="TO_ONE">
+      <point x="-192.0" y="-271.0" />
+      <point x="134.6574324324323" y="150.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MessageAdapter" target="fyp_mobapp_java.Message" relationship="DEPENDENCY">
+      <point x="177.00048648648618" y="116.5" />
+      <point x="552.5" y="440.0" />
+      <point x="552.5" y="467.5" />
+      <point x="1210.489" y="467.5" />
+      <point x="1210.489" y="61.5" />
+      <point x="171.00005405405386" y="0.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity" target="fyp_mobapp_java.MainActivity.ButtonRecyclerView" relationship="CREATE">
+      <point x="-6.303378378378397" y="271.0" />
+      <point x="0.0" y="-95.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity.ButtonRecyclerView.ButtonViewHolder" target="fyp_mobapp_java.MainActivity.ButtonRecyclerView" relationship="INNER_CLASS">
+      <point x="-15.0" y="39.5" />
+      <point x="283.0" y="1244.0" />
+      <point x="-172.0" y="15.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.BotResponse.Buttons" target="fyp_mobapp_java.BotResponse" relationship="INNER_CLASS">
+      <point x="-87.24999999999989" y="-61.5" />
+      <point x="979.0418918918923" y="707.25" />
+      <point x="943.2385135135138" y="707.25" />
+      <point x="0.0" y="83.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MainActivity.ButtonRecyclerView" target="fyp_mobapp_java.BotResponse.Buttons" relationship="DEPENDENCY">
+      <point x="172.0" y="0.0" />
+      <point x="1066.2918918918922" y="1229.0" />
+      <point x="0.0" y="61.5" />
+    </edge>
+    <edge source="fyp_mobapp_java.MessageSender" target="fyp_mobapp_java.Message" relationship="DEPENDENCY">
+      <point x="-18.738513513513794" y="28.0" />
+      <point x="594.5" y="439.75" />
+      <point x="1184.489" y="439.75" />
+      <point x="1184.489" y="61.5" />
+      <point x="984.3175" y="61.5" />
+      <point x="984.3175" y="61.5" />
+      <point x="171.00005405405386" y="0.0" />
+    </edge>
+    <edge source="fyp_mobapp_java.MessageAdapter.MessageViewHolder" target="fyp_mobapp_java.MessageAdapter" relationship="INNER_CLASS">
+      <point x="19.738513513513794" y="-61.5" />
+      <point x="0.0" y="150.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic" zoom="1.0" showDependencies="true" x="510.5" y="442.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Fields</Category>
+    <Category>Inner Classes</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
