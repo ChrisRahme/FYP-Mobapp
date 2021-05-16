@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
 
+<resources>
     <style name="messageFrom">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:justificationMode">inter_word</item>
+        <item name="android:justificationMode"><![CDATA[inter_word]]></item>
     </style>
 </resources>
