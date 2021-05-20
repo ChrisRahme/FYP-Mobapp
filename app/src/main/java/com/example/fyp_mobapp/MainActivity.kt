@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var sendBtn: FloatingActionButton
     private lateinit var button_view: RecyclerView
 
-    private val ip   = "194.126.17.114" //"194.126.17.114" //"xxx.ngrok.io" //"localhost:5005"
+    private val ip   = "303e5a44931f.ngrok.io" //"194.126.17.114" //"xxx.ngrok.io" //"localhost:5005"
     private val url  = "http://$ip:/webhooks/rest/" // ⚠️MUST END WITH "/"
 
     private val USER = "M-" + UUID.randomUUID().toString()
@@ -73,15 +73,19 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this, "Please enter a message.", Toast.LENGTH_SHORT).show()
             }
         }
+
+        sendMessage(message = "Hello", display = false)
     }
 
-    fun sendMessage(message: String, alternative: String = "") {
+    fun sendMessage(message: String, alternative: String = "", display: Boolean = true) {
         val displayedMessage  = if (alternative.isNullOrEmpty()) message else alternative
         var userMessage       = Message(USER, message) // The message that will be sent to Rasa (payload in case of buttons)
         var userDisplayed     = Message(USER, displayedMessage) // The message that will be displayed on screen (title in case of buttons)
 
-        messageList.add(userDisplayed)
-        adapter.notifyDataSetChanged()
+        if (display) {
+            messageList.add(userDisplayed)
+            adapter.notifyDataSetChanged()
+        }
 
         //val date = Date(System.currentTimeMillis())
         val okHttpClient = OkHttpClient()
